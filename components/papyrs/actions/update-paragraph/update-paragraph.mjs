@@ -1,9 +1,9 @@
 import app from "../../papyrs.app.mjs";
 
 export default {
-  name: "Update Heading",
-  description: "Update Heading. [See the docs here](https://about.papyrs.com/@docs/API#Update-Text-box/Heading)",
-  key: "papyrs-update-heading",
+  name: "Update Paragraph",
+  description: "Update Paragraph. [See the docs here](https://about.papyrs.com/@docs/API#Update-Text-box/Heading)",
+  key: "papyrs-update-paragraph",
   version: "0.0.1",
   type: "action",
   props: {
@@ -31,7 +31,7 @@ export default {
         }) => ({
           pageId: page,
           subsite,
-          className: "Heading",
+          className: "Paragraph",
         }),
       ],
     },
@@ -55,14 +55,14 @@ export default {
         format: this.format,
       },
     };
-    const res = await this.app.updateHeading(
+    const res = await this.app.updateParagraph(
       data,
       this.widget,
       this.page,
       this.subsite,
       $,
     );
-    $.export("$summary", "Heading successfully updated");
+    $.export("$summary", "Paragraph successfully updated");
     return res;
   },
 };
